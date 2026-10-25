@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BrainPulse AI - Kích Hoạt Tiềm Năng, Làm Chủ Tri Thức</title>
+    
+    <!-- FAVICON ICON BRAINPULSE AI (TIA CHỚP XANH ĐẶC TRƯNG) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23059669'/><path d='M18.5 4L7 18h9l-1.5 10L25 14h-9l2.5-10z' fill='%23ffffff'/></svg>">
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -20,14 +24,17 @@
     <!-- NAVBAR HEADER -->
     <header class="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 py-3.5 px-6 sticky top-0 z-40 transition-colors">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <!-- LOGO BRAINPULSE -->
-            <div class="flex items-center space-x-2.5 cursor-pointer" onclick="if(currentUser) switchNavTab('home')">
+            <!-- LOGO BRAINPULSE VÀ v1.0 ĐẶT ĐÚNG VỊ TRÍ -->
+            <div class="flex items-center space-x-2.5 cursor-pointer pl-0" onclick="if(currentUser) switchNavTab('home')">
                 <div class="bg-emerald-600 text-white rounded-xl w-9 h-9 flex items-center justify-center font-bold text-lg shadow-sm">
                     <i class="fa-solid fa-bolt-lightning"></i>
                 </div>
-                <div class="flex items-center gap-1.5">
-                    <span class="font-extrabold text-xl tracking-tight text-slate-900 dark:text-white">Brain<span class="text-emerald-600">Pulse</span></span>
-                    <span class="bg-emerald-100 dark:bg-emerald-900/60 text-emerald-800 dark:text-emerald-300 text-[10px] font-black px-2 py-0.5 rounded-md border border-emerald-300/50">AI</span>
+                <div>
+                    <div class="flex items-center gap-1.5">
+                        <span class="font-extrabold text-xl tracking-tight text-slate-900 dark:text-white">Brain<span class="text-emerald-600">Pulse</span></span>
+                        <span class="bg-emerald-100 dark:bg-emerald-900/60 text-emerald-800 dark:text-emerald-300 text-[10px] font-black px-2 py-0.5 rounded-md border border-emerald-300/50">AI</span>
+                    </div>
+                    <div class="text-[10px] font-extrabold text-emerald-600 dark:text-emerald-400 tracking-widest pl-0.5 pt-0.5">v1.0</div>
                 </div>
             </div>
 
@@ -193,23 +200,8 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm space-y-4">
-                    <div class="w-12 h-12 rounded-2xl bg-emerald-100 dark:bg-emerald-900/50 text-emerald-600 flex items-center justify-center font-bold text-xl"><i class="fa-solid fa-database"></i></div>
-                    <h3 class="font-extrabold text-lg text-slate-900 dark:text-white">Ngân Hàng Câu Hỏi Chuẩn Hóa</h3>
-                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Thư viện câu hỏi phong phú phân loại theo môn học và đầy đủ các khối lớp từ 1 đến 12.</p>
-                </div>
-                <div class="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm space-y-4">
-                    <div class="w-12 h-12 rounded-2xl bg-teal-100 dark:bg-teal-900/50 text-teal-600 flex items-center justify-center font-bold text-xl"><i class="fa-solid fa-robot"></i></div>
-                    <h3 class="font-extrabold text-lg text-slate-900 dark:text-white">AI Trợ Giảng Socratic</h3>
-                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Trợ lý AI thông minh dẫn dắt học sinh từng bước tư duy logic thay vì cho sẵn đáp án.</p>
-                </div>
-                <div class="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm space-y-4">
-                    <div class="w-12 h-12 rounded-2xl bg-blue-100 dark:bg-blue-900/50 text-blue-600 flex items-center justify-center font-bold text-xl"><i class="fa-solid fa-check-double"></i></div>
-                    <h3 class="font-extrabold text-lg text-slate-900 dark:text-white">Chấm Bài & Quản Lý Tự Động</h3>
-                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Hệ thống tổng hợp bài nộp và tích hợp chấm điểm chi tiết từng câu đúng/sai.</p>
-                </div>
-            </div>
+            <!-- CÁC Ô TÍNH NĂNG TRANG CHỦ -->
+            <div id="homeCardsContainer" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
         </section>
 
         <!-- VIEW 1: NGÂN HÀNG CÂU HỎI -->
@@ -347,8 +339,9 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="py-4 text-center text-xs text-slate-400 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800">
-        BrainPulse AI © 2026 - Kích Hoạt Tiềm Năng, Làm Chủ Tri Thức
+    <footer class="py-4 text-center text-xs text-slate-400 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 space-y-1">
+        <div>BrainPulse AI © 2026 - Kích Hoạt Tiềm Năng, Làm Chủ Tri Thức</div>
+        <div class="font-bold text-emerald-600 dark:text-emerald-400">by Trương Minh Đăng</div>
     </footer>
 
     <!-- MODAL PROFILE -->
@@ -565,7 +558,6 @@
 
     <!-- JAVASCRIPT HỆ THỐNG -->
     <script>
-        // CẤU HÌNH FIREBASE DỰ ÁN BRAINPULSE AI-ADMIN[cite: 7]
         const firebaseConfig = {
             apiKey: "AIzaSyC_gwzexp4cS0qrnTddsXabE1S2yMWR6F8",
             authDomain: "brainpulse-ai-admin.firebaseapp.com",
@@ -576,7 +568,6 @@
             measurementId: "G-91E2H4BLRP"
         };
 
-        // KHỞI TẠO FIREBASE FIRESTORE
         firebase.initializeApp(firebaseConfig);
         const db = firebase.firestore();
 
@@ -611,7 +602,6 @@
             renderAppViewState();
         });
 
-        // HÀM ẨN / HIỆN MẬT KHẨU
         function togglePasswordVisibility(inputId, iconId) {
             const input = document.getElementById(inputId);
             const icon = document.getElementById(iconId);
@@ -672,7 +662,6 @@
             });
         }
 
-        // XỬ LÝ ĐĂNG KÝ VỚI BẢO MẬT MATRIX VÀ LƯU TỰ ĐỘNG LÊN FIREBASE CLOUD
         async function handleRegister(e) {
             e.preventDefault();
             const fullName = document.getElementById('regFullName').value.trim();
@@ -693,7 +682,6 @@
             }
 
             try {
-                // Kiểm tra tài khoản đã tồn tại trên Firebase hay chưa
                 const userDoc = await db.collection("users").doc(username).get();
                 if (userDoc.exists || username === 'test' || username === 'teacher') {
                     usernameErr.textContent = 'Tên đăng nhập này đã tồn tại!';
@@ -701,7 +689,6 @@
                     return;
                 }
 
-                // Lưu dữ liệu trực tiếp lên Firebase Cloud Firestore
                 await db.collection("users").doc(username).set({
                     fullName: fullName,
                     username: username,
@@ -720,7 +707,6 @@
             }
         }
 
-        // XỬ LÝ ĐĂNG NHẬP XÁC THỰC QUA FIREBASE CLOUD
         async function handleLogin(e) {
             e.preventDefault();
             const username = document.getElementById('loginUsername').value.trim();
@@ -731,7 +717,6 @@
             usernameErr.classList.add('hidden');
             passwordErr.classList.add('hidden');
 
-            // Xử lý tài khoản kiểm thử mặc định
             if (username === 'test' && password === '12345678') {
                 currentUser = { fullName: 'Học Sinh Test', username: 'test', role: 'student', gradeClass: 'Lớp 8' };
                 localStorage.setItem('brainpulse_current_user', JSON.stringify(currentUser));
@@ -745,7 +730,6 @@
             }
 
             try {
-                // Truy vấn tài khoản từ Firebase Cloud Firestore
                 const userDoc = await db.collection("users").doc(username).get();
                 if (!userDoc.exists) {
                     usernameErr.textContent = 'Tên đăng nhập không tồn tại!';
@@ -769,7 +753,6 @@
             }
         }
 
-        // ĐĂNG XUẤT & XÓA SẠCH DỮ LIỆU ĐÃ NHẬP
         function logout() {
             localStorage.removeItem('brainpulse_current_user');
             currentUser = null;
@@ -829,6 +812,7 @@
                     navStudentMainBtn.classList.remove('hidden');
                 }
                 navHomeBtn.classList.remove('hidden');
+                renderHomeCards();
                 switchNavTab('home');
             } else {
                 authSection.classList.remove('hidden');
@@ -840,6 +824,44 @@
                 aiSection.classList.add('hidden');
                 mainNavTabs.style.display = 'none';
                 userInfoHeader.style.display = 'none';
+            }
+        }
+
+        function renderHomeCards() {
+            const container = document.getElementById('homeCardsContainer');
+            const isTeacher = currentUser && currentUser.role === 'teacher';
+
+            if (isTeacher) {
+                container.innerHTML = `
+                    <div onclick="switchNavTab('bank')" class="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm space-y-4 cursor-pointer hover:border-emerald-500 hover:shadow-lg dark:hover:border-emerald-500 transition group">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-100 dark:bg-emerald-900/50 text-emerald-600 flex items-center justify-center font-bold text-xl group-hover:scale-110 transition"><i class="fa-solid fa-database"></i></div>
+                        <h3 class="font-extrabold text-lg text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition">Ngân Hàng Câu Hỏi Chuẩn Hóa</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Thư viện câu hỏi phong phú phân loại theo môn học và đầy đủ các khối lớp từ 1 đến 12.</p>
+                    </div>
+                    <div onclick="switchNavTab('ai')" class="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm space-y-4 cursor-pointer hover:border-teal-500 hover:shadow-lg dark:hover:border-teal-500 transition group">
+                        <div class="w-12 h-12 rounded-2xl bg-teal-100 dark:bg-teal-900/50 text-teal-600 flex items-center justify-center font-bold text-xl group-hover:scale-110 transition"><i class="fa-solid fa-robot"></i></div>
+                        <h3 class="font-extrabold text-lg text-slate-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-400 transition">AI Trợ Giảng Socratic</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Trợ lý AI thông minh dẫn dắt học sinh từng bước tư duy logic thay vì cho sẵn đáp án.</p>
+                    </div>
+                    <div onclick="switchNavTab('submissions')" class="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm space-y-4 cursor-pointer hover:border-blue-500 hover:shadow-lg dark:hover:border-blue-500 transition group">
+                        <div class="w-12 h-12 rounded-2xl bg-blue-100 dark:bg-blue-900/50 text-blue-600 flex items-center justify-center font-bold text-xl group-hover:scale-110 transition"><i class="fa-solid fa-check-double"></i></div>
+                        <h3 class="font-extrabold text-lg text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition">Chấm Bài & Quản Lý Tự Động</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Hệ thống tổng hợp bài nộp và tích hợp chấm điểm chi tiết từng câu đúng/sai.</p>
+                    </div>
+                `;
+            } else {
+                container.innerHTML = `
+                    <div onclick="switchNavTab('studentMain')" class="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm space-y-4 cursor-pointer hover:border-emerald-500 hover:shadow-lg dark:hover:border-emerald-500 transition group">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-100 dark:bg-emerald-900/50 text-emerald-600 flex items-center justify-center font-bold text-xl group-hover:scale-110 transition"><i class="fa-solid fa-book-open"></i></div>
+                        <h3 class="font-extrabold text-lg text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition">Không gian học tập</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Truy cập danh sách bài kiểm tra và làm bài tập trực tuyến theo lớp của bạn.</p>
+                    </div>
+                    <div onclick="switchNavTab('ai')" class="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm space-y-4 cursor-pointer hover:border-teal-500 hover:shadow-lg dark:hover:border-teal-500 transition group">
+                        <div class="w-12 h-12 rounded-2xl bg-teal-100 dark:bg-teal-900/50 text-teal-600 flex items-center justify-center font-bold text-xl group-hover:scale-110 transition"><i class="fa-solid fa-robot"></i></div>
+                        <h3 class="font-extrabold text-lg text-slate-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-400 transition">AI Trợ Giảng Socratic</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Trợ lý AI thông minh dẫn dắt học sinh từng bước tư duy logic thay vì cho sẵn đáp án.</p>
+                    </div>
+                `;
             }
         }
 
@@ -1401,6 +1423,7 @@
 
             localStorage.setItem('brainpulse_submissions', JSON.stringify(submissionsDB));
             closeStudentDoTestModal();
+            alert('Nộp bài thành công! Giáo viên sẽ chấm điểm bài làm của bạn.');
         }
 
         function openProfileModal() {
